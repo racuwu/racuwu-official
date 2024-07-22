@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Poppins', sans-serif; /* Sets Poppins as the default font */
+}
+
+::-webkit-scrollbar{
+  width: 10px;
+  background: #ca8fa9;
+
+}
+::-webkit-scrollbar-track{
+  background: transparent;
+  /* border-radius: 100vw; */
+  /* margin-block: 0.5em; */
+
+
+}
+
+::-webkit-scrollbar-thumb{
+  background: #D51067;
+  border-radius: 4px;
+  border-radius: 100vw;
+  padding-block: 0.5em;
+  /* margin: 2px; */
+}
+::-webkit-scrollbar-thumb:hover{
+  background: rgb(85, 5, 40);
+  scale: 2;
+}
