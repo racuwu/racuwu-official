@@ -7,9 +7,27 @@ const inter = Inter({ subsets: ["latin"] });
 const poppins = Inter({ subsets: ["latin"], weight:['100', '200', '300', '400', '500', '600'] });
 
 export const metadata = {
-  title: "Rotaract Club of Uva Wellassa University of Sri Lanka",
-  description: "We are a professional voluntary movement that focuses on six avenues: Community Service, Club Service, Professional Development, International Service, Public Relations, and Environment Service.The purpose of our club is to provide opportunities for young adults to develop leadership skills, promote global citizenship, and encourage community service. We organize and participate in a variety of service projects, fundraisers, and social events.We are open to young adults from all backgrounds and professions who share a commitment to service and making a difference in their communities. It is a great way to meet new people, develop professional skills, and make a positive impact on the world.",
+  title: "Rotaract Club of Uva Wellassa University - Badulla",
+  description: "Official website of the Rotaract Club of Uva Wellassa University of Sri Lanka. Learn about our community service projects, leadership opportunities, and global impact. Join us to make a difference! Related terms: Rota Uva, Uva Rota, UWU Rota, Rotaract UWU, RAC UWU, Uva Wellassa Rotaract, Rota Uva Wellassa, Rotaract Club Uva Wellassa.",
+  keywords: "Rotaract, Uva Wellassa, Rota Uva, UWU Rota, Rotaract UWU, RAC UWU, Uva Wellassa Rotaract, Rota Uva Wellassa, Community Service, Leadership, Professional Development, Club Service, International Service, Public Relations, Environment Service, Voluntary Movement, Sri Lanka",
+  author: "Rotaract Club of Uva Wellassa University",
+  robots: "index, follow",
+  og: {
+    title: "Rotaract Club of Uva Wellassa University - Badulla",
+    description: "Join the Rotaract Club of Uva Wellassa University to engage in community service, develop leadership skills, and make a global impact. Explore our avenues of service and get involved today!",
+    image: "https://racuwu.com/assets/images/logo/racuwu.png",
+    url: "https://www.racuwu.com",
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@racuwu",
+    title: "Rotaract Club of Uva Wellassa University - Badulla",
+    description: "We are a professional voluntary movement focused on community service, leadership, and global citizenship. Join us to make a positive impact!",
+    image: "https://racuwu.com/assets/images/logo/racuwu.png"
+  },
 };
+
 
 export default function Layout({ children }) {
   return (
