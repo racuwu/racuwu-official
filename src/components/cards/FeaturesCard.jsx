@@ -1,32 +1,20 @@
 import React from "react";
 
-export default function FeaturesCard({ imageUrl, title, subtitle, content }) {
-  return (
-    <>
-      {/* <!-- Component: Basic blog card --> */}
-      <div className="overflow-hidden rounded-xl shadow-md shadow-slate-300 hover:shadow-slate-400 hover:shadow-md p-2">
-        {/* <!-- Image --> */}
-        <figure>
-          <img
-            src={imageUrl} // Use the imageUrl prop for dynamic image source
-            alt="card image"
-            className="h-[200px] w-full object-cover object-center rounded-t-lg hover:scale-105 duration-300"
-          />
-        </figure>
-        {/* <!-- Body--> */}
-        <div className="p-4">
-          <header className="mb-4">
-            <h3 className="text-xl font-semibold text-[#D51067]">
-              {title} {/* Use the title prop for dynamic title */}
-            </h3>
-            <p className="text-sm text-slate-400"> {subtitle} </p> {/* Use the date prop for dynamic date */}
-          </header>
-          <p className="text-justify">
-            {content} {/* Use the content prop for dynamic content */}
-          </p>
+export default function FeaturesCard({ imageUrl, title, content }) {
+    return (
+        <div className="overflow-hidden duration-300 bg-white">
+            {/* Image with text on top */}
+            <div className="relative">
+                <img
+                    src={imageUrl}
+                    alt={`${title} image`}
+                    className="h-96 w-full object-cover object-center transition-transform duration-500 hover:scale-125"
+                />
+                <div className="absolute bottom-0 left-0 w-full h-48 p-6 bg-gradient-to-t from-black/90 to-transparent text-white">
+                    <h3 className="text-2xl font-semibold mb-3">{title}</h3>
+                    <p className="text-gray-300 leading-relaxed">{content}</p>
+                </div>
+            </div>
         </div>
-      </div>
-      {/* <!-- End Basic blog card --> */}
-    </>
-  );
+    );
 }
