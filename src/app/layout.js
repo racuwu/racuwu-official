@@ -32,11 +32,14 @@ export const metadata = {
 export default function Layout({ children }) {
   return (
     <html lang="en">
-      <body>
-        <Navbar />
-        <main className="poppins">{children}</main>
-        <Footer />
-      </body>
+    <head>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    </head>
+    <body>
+    <Navbar/>
+    <main className="poppins">{children}</main>
+    <Footer/>
+    </body>
     </html>
   );
 }
