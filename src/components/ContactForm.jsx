@@ -123,179 +123,133 @@ const handleSubmit = (e) => {
   }
 };
 
-  return (
-    <div className="relative flex items-top justify-center items-center  bg-white  sm:items-center sm:pt-0 mx-4 md:mx-0 mb-8 lg:mt-8 ">
-      <div className="max-w-6xl mx-auto sm:px-6 lg:px-8">
-        <div className="mt-8 overflow-hidden">
-          <div className="grid grid-cols-1 md:grid-cols-2">
-            <div className="p-6 md:mr-2 bg-pink-100  sm:rounded-lg">
-              <h1 className="text-4xl sm:text-5xl text-[#D51067]  font-extrabold tracking-tight">
-                Get in touch
-              </h1>
-              <p className="text-normal text-lg sm:text-2xl font-medium text-gray-600 dark:text-gray-400 mt-2">
-                Fill in the form to start a conversation
-              </p>
-
-              <div className="flex items-center mt-8 text-gray-600 dark:text-gray-400">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="1.5"
-                  viewBox="0 0 24 24"
-                  className="w-8 h-8 text-gray-500"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="1.5"
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="1.5"
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                </svg>
-                <div className="ml-4 text-md tracking-wide font-semibold">
-                  Uva Wellassa University of Sri Lanka
-                </div>
-              </div>
-
-              <div className="flex items-center mt-4 text-gray-600 dark:text-gray-400">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="1.5"
-                  viewBox="0 0 24 24"
-                  className="w-8 h-8 text-gray-500"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="1.5"
-                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                  />
-                </svg>
-                <div className="ml-4 text-md tracking-wide font-semibold w-full">
-                  <div>+94 75 214 1779(Thisal), +94 76 528 9313(Yasith),</div>{" "}
-                  +94 71 974 8048(Gayathma),+94 74 182 4810(Ravindu)
-                </div>
-              </div>
-
-              <div className="flex items-center mt-2 text-gray-600 dark:text-gray-400">
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="1.5"
-                  viewBox="0 0 24 24"
-                  className="w-8 h-8 text-gray-500"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="1.5"
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  />
-                </svg>
-                <div className="ml-4 text-md tracking-wide font-semibold w-40">
-                  racuwub@gmail.com
-                </div>
-              </div>
-            </div>
-
-            <form
-              onSubmit={handleSubmit}
-              className="p-6 flex flex-col justify-center"
-            >
-              <div className="flex flex-col">
-                <label htmlFor="name" className="hidden">
-                  Full Name
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  placeholder="Full Name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-100 mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400  font-semibold focus:border-indigo-500 focus:outline-none"
-                />
-                <p className="error">{formData.errors.name}</p>
-              </div>
-
-              <div className="flex flex-col mt-2">
-                <label htmlFor="email" className="hidden">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="Email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-100 mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400  font-semibold focus:border-indigo-500 focus:outline-none"
-                />
-                <p className="error">{formData.errors.email}</p>
-              </div>
-
-              <div className="flex flex-col mt-2">
-                <label htmlFor="tel" className="hidden">
-                  Number
-                </label>
-                <input
-                  type="tel"
-                  name="tel"
-                  id="tel"
-                  placeholder="Telephone Number"
-                  value={formData.tel}
-                  onChange={handleChange}
-                  className="w-100 mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400  font-semibold focus:border-indigo-500 focus:outline-none"
-                />
-                <p className="error">{formData.errors.tel}</p>
-              </div>
-              <div className="flex flex-col mt-2">
-                <label htmlFor="message" className="hidden">
-                  Message
-                </label>
-                <textarea
-                  name="message"
-                  id="message"
-                  placeholder="Enter Your Message Here..."
-                  value={formData.message}
-                  onChange={handleChange}
-                  className="w-100 mt-2 py-3 px-3 rounded-lg bg-white border border-gray-400  font-semibold focus:border-indigo-500 focus:outline-none"
-                />
-                <p className="error">{formData.errors.message}</p>
-              </div>
-
-              <button
-                type="submit"
-                className="md:w-32 bg-[#D51067] hover:bg-blue-dark text-white font-bold py-3 px-6 rounded-lg mt-3 hover:bg-indigo-500 transition ease-in-out duration-300"
-              >
-                Submit
-              </button>
-              {formData.submissionStatus === "success" && (
-                <p className="text-green-500 pt-2">Email sent successfully!</p>
-              )}
-              {formData.submissionStatus === "error" && (
-                <p className="text-red-500 pt-2">
-                  Failed to send the email. Please try again later.
-                </p>
-              )}
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+  return <ContactSection handleSubmit={handleSubmit} formData={formData} handleChange={handleChange} />;
 };
 
 export default ContactForm;
+
+import React from 'react';
+
+const ContactSection = ({ formData, handleSubmit, handleChange }) => {
+  const contactInfo = [
+    {
+      icon: (
+          <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" className="w-8 h-8">
+            <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+            <path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+          </svg>
+      ),
+      text: "Uva Wellassa University of Sri Lanka"
+    },
+    {
+      icon: (
+          <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" className="w-8 h-8">
+            <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+          </svg>
+      ),
+      text: "+94 75 214 1779 (Thisal), +94 76 528 9313 (Yasith), +94 71 974 8048 (Gayathma), +94 74 182 4810 (Ravindu)"
+    },
+    {
+      icon: (
+          <svg fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" viewBox="0 0 24 24" className="w-8 h-8">
+            <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+      ),
+      text: "racuwub@gmail.com"
+    }
+  ];
+
+  return (
+      <section className="py-20 bg-gray-50 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] -z-10" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header */}
+          <div className="text-center mb-16 animate__animated animate__fadeInUp">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-gray-900">
+              <span className="block">Get in touch</span>
+              <span className="block mt-2 text-2xl md:text-3xl font-medium text-gray-600">
+              Fill in the form to start a conversation
+            </span>
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-pink-600 to-purple-600 mx-auto mt-6" />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Contact Information */}
+            <div className="bg-gradient-to-br from-pink-50 to-purple-50 p-8 rounded-2xl shadow-lg animate__animated animate__fadeInLeft">
+              <div className="space-y-6">
+                {contactInfo.map((info, index) => (
+                    <div
+                        key={index}
+                        className="flex items-start gap-4 p-4 bg-white/80 backdrop-blur-sm rounded-xl transition-transform hover:translate-x-2"
+                    >
+                      <div className="text-pink-600">
+                        {info.icon}
+                      </div>
+                      <div className="text-gray-700 font-medium">
+                        {info.text}
+                      </div>
+                    </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Contact Form */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg animate__animated animate__fadeInRight">
+              <form onSubmit={handleSubmit} className="space-y-4">
+                {[
+                  { name: "name", type: "text", placeholder: "Full Name" },
+                  { name: "email", type: "email", placeholder: "Email" },
+                  { name: "tel", type: "tel", placeholder: "Telephone Number" }
+                ].map((field) => (
+                    <div key={field.name} className="space-y-1">
+                      <input
+                          type={field.type}
+                          name={field.name}
+                          placeholder={field.placeholder}
+                          value={formData[field.name]}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 transition-colors duration-200"
+                      />
+                      {formData.errors[field.name] && (
+                          <p className="text-red-500 text-sm">{formData.errors[field.name]}</p>
+                      )}
+                    </div>
+                ))}
+
+                <div className="space-y-1">
+                <textarea
+                    name="message"
+                    placeholder="Enter Your Message Here..."
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows="4"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-pink-500 focus:ring-2 focus:ring-pink-200 transition-colors duration-200"
+                />
+                  {formData.errors.message && (
+                      <p className="text-red-500 text-sm">{formData.errors.message}</p>
+                  )}
+                </div>
+
+                <button
+                    type="submit"
+                    className="w-full md:w-auto px-8 py-3 bg-gradient-to-r from-pink-600 to-purple-600 text-white font-medium rounded-lg hover:from-pink-700 hover:to-purple-700 transition-all duration-200 transform hover:scale-105"
+                >
+                  Submit
+                </button>
+
+                {formData.submissionStatus === "success" && (
+                    <p className="text-green-500 animate__animated animate__fadeIn">Email sent successfully!</p>
+                )}
+                {formData.submissionStatus === "error" && (
+                    <p className="text-red-500 animate__animated animate__fadeIn">Failed to send the email. Please try again later.</p>
+                )}
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+  );
+};
