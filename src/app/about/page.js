@@ -3,6 +3,7 @@ import TwoLineTitle from "@/components/titles/TwoLineTitle";
 import NumberSpringBanner from "@/components/banner/NumberSpringBanner";
 import GoogleMapComponent from "@/components/GoogleMap";
 import PageHeader from "@/components/PageHeader";
+import GallerySection from "@/components/cards/ImageCard";
 // import Image from "next/image";
 
 export default function Home() {
@@ -125,13 +126,7 @@ export default function Home() {
         <TwoLineTitle sub="Honors And Achievements" main="Awards" />
 
         <NumberSpringBanner />
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3  gap-4 max-w-[1140px] py-8">
-          {/* Map over the array of data and render FeaturesCard components */}
-          {gallery.map((data, index) => (
-            <ImageCard key={index} imageUrl={data.imageUrl} url={data.url} />
-          ))}
-        </div>
+        <GallerySection gallery={gallery}/>
       </div>
       <GoogleMapComponent />
     </>
