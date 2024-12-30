@@ -200,7 +200,7 @@ const clubHistory = [
     topDes:
       "“Make yourself to be beyond your own expectations by being a Rotaractor”",
     ipp: "Charter President",
-    content: "Rtr. Pramod Wattegedara",
+    ippdescription: "Rtr. Pramod Wattegedara",
     sec: "Secretary",
     secdescription: "Rtr. Malithi Neluhena",
     noOfBOD: "No of Board Members: 10",
@@ -221,17 +221,19 @@ const ClubHistory = () => (
 
         <div className="relative">
           <div
-              className="absolute left-1/2 top-0 h-full w-0.5 bg-gradient-to-b from-purple-600 to-pink-600 transform -translate-x-1/2 z-0"
-          />
+              className="absolute left-1/2 top-0 h-full w-0.5 bg-gradient-to-b from-purple-600 to-pink-600 transform -translate-x-1/2 z-0"/>
 
           {clubHistory.map((item, index) => (
               <div key={index} className="relative mb-24">
                 {/* Year marker */}
                 <div className="relative flex justify-center mb-8">
-                  <div className="absolute w-32 h-32 bg-pink-50 rounded-full opacity-50 transform -translate-x-1/2 -translate-y-1/2" />
-                  <div className="absolute w-24 h-24 bg-pink-100 rounded-full opacity-50 transform -translate-x-1/2 -translate-y-1/2" />
-                  <div className="relative w-16 h-16 bg-white rounded-full border-4 border-pink-600 transform -translate-y-1/2 flex items-center justify-center shadow-lg z-10">
-                    <BiCalendarStar className="w-8 h-8 text-pink-600" />
+                  <div
+                      className="absolute w-32 h-32 bg-pink-50 rounded-full opacity-50 transform -translate-x-1/2 -translate-y-1/2"/>
+                  <div
+                      className="absolute w-24 h-24 bg-pink-100 rounded-full opacity-50 transform -translate-x-1/2 -translate-y-1/2"/>
+                  <div
+                      className="relative w-16 h-16 bg-white rounded-full border-4 border-pink-600 transform -translate-y-1/2 flex items-center justify-center shadow-lg z-10">
+                    <BiCalendarStar className="w-8 h-8 text-pink-600"/>
                   </div>
                   <div className="absolute top-1/2 transform -translate-y-1/2">
                     <h2 className="text-3xl font-bold text-purple-600 text-center mt-8">{item.date}</h2>
@@ -241,31 +243,40 @@ const ClubHistory = () => (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
                   {/* Moment of Pride (Quotes) Section */}
                   <div className="md:pr-12">
-                    <div className="bg-white rounded-2xl shadow-xl p-8 transform transition-all hover:scale-105 hover:shadow-2xl border border-purple-100">
+                    <div
+                        className="bg-white rounded-2xl shadow-xl p-8 transform transition-all hover:scale-105 hover:shadow-2xl border border-purple-100">
                       <div className="relative">
-                        <FaQuoteLeft className="absolute -top-4 -left-4 w-8 h-8 text-pink-200" />
+                        <FaQuoteLeft className="absolute -top-4 -left-4 w-8 h-8 text-pink-200"/>
                         <p className="text-gray-600 italic text-lg pt-4 px-4">{item.topDes}</p>
                       </div>
 
                       <div className="mt-8 space-y-6">
                         <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-4">
                           <div className="flex items-center gap-3 mb-2">
-                            <FaUserTie className="w-6 h-6 text-purple-600" />
-                            <h3 className="font-semibold text-purple-900 text-lg">{item.ipp}</h3>
+                            <FaUserTie className="w-6 h-6 text-purple-600"/>
+                            <h3 className="font-semibold text-purple-900 text-lg">
+                              {index === 0 ? (
+                                  <span className="text-purple-800">Immediate Past President</span>
+                              ) : index === clubHistory.length - 1 ? (
+                                  <span className="text-purple-800">Charter President</span>
+                              ) : (
+                                  <span>President</span>
+                              )}
+                            </h3>
                           </div>
                           <p className="text-gray-700 pl-9">{item.ippdescription}</p>
                         </div>
 
                         <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-4">
                           <div className="flex items-center gap-3 mb-2">
-                            <FaUserTie className="w-6 h-6 text-purple-600" />
+                            <FaUserTie className="w-6 h-6 text-purple-600"/>
                             <h3 className="font-semibold text-purple-900 text-lg">{item.sec}</h3>
                           </div>
                           <p className="text-gray-700 pl-9">{item.secdescription}</p>
                         </div>
 
                         <div className="flex items-center gap-3 pl-4">
-                          <FaUsers className="w-6 h-6 text-pink-600" />
+                          <FaUsers className="w-6 h-6 text-pink-600"/>
                           <p className="text-gray-700 font-medium">{item.noOfBOD}</p>
                         </div>
                       </div>
@@ -277,13 +288,13 @@ const ClubHistory = () => (
                     <div className="bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl shadow-xl p-1">
                       <div className="bg-white rounded-xl p-8">
                         <div className="flex items-center gap-3 mb-6">
-                          <IoTrophyOutline className="w-8 h-8 text-pink-600" />
+                          <IoTrophyOutline className="w-8 h-8 text-pink-600"/>
                           <h3 className="font-bold text-gray-900 text-xl">{item.detailsTitle}</h3>
                         </div>
                         <ul className="space-y-4">
                           {item.details.map((detail, idx) => (
                               <li key={idx} className="flex items-start gap-3">
-                                <span className="w-2 h-2 rounded-full bg-pink-600 mt-2 flex-shrink-0" />
+                                <span className="w-2 h-2 rounded-full bg-pink-600 mt-2 flex-shrink-0"/>
                                 <p className="text-gray-600 leading-relaxed">{detail}</p>
                               </li>
                           ))}
@@ -294,6 +305,39 @@ const ClubHistory = () => (
                 </div>
               </div>
           ))}
+
+          {/* Club Origin Section */}
+          <div className="mt-32 relative">
+            <div
+                className="absolute w-48 h-48 bg-pink-50 rounded-full opacity-50 left-1/2 transform -translate-x-1/2 -translate-y-1/2"/>
+            <div
+                className="absolute w-40 h-40 bg-pink-100 rounded-full opacity-50 left-1/2 transform -translate-x-1/2 -translate-y-1/2"/>
+            <div
+                className="relative bg-white rounded-3xl shadow-2xl p-12 max-w-3xl mx-auto border-2 border-purple-100 z-10">
+              <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
+                <div
+                    className="w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center">
+                  <FaUsers className="w-8 h-8 text-white"/>
+                </div>
+              </div>
+              <h2 className="text-3xl font-bold text-center mb-6 pt-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
+                Our Beginning
+              </h2>
+              <p className="text-gray-600 text-center text-lg leading-relaxed">
+                Founded with a vision to serve and lead, our club began its remarkable journey in 2013.
+                What started as a gathering of assionate individuals has grown into a vibrant community of
+                leaders,
+                innovators, and changemakers. Our charter members laid the foundation for what would become a legacy of
+                excellence, service, and unwavering commitment to our community.
+              </p>
+              <div className="mt-8 text-center">
+                <span
+                    className="inline-block px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full font-semibold">
+                  Celebrating 12 Years of Excellence
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
