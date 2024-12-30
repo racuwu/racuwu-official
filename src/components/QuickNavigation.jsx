@@ -35,7 +35,7 @@ const NavigationGrid = () => {
         },
         {
         title: 'Blog',
-        path: '/blog',
+        path: 'https://blog.racuwu.com/blog',
         icon: 'https://img.icons8.com/fluency/48/blog.png',
         description: 'Latest news and updates'
 }
