@@ -26,7 +26,7 @@ const WhoWeAre = () => {
                 <div className="bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg p-8 shadow-lg">
                     <div className="text-white space-y-6">
                         <blockquote className="text-2xl italic font-light leading-relaxed">
-                            "The best way to find yourself is to lose yourself in the service of others."
+                            The best way to find yourself is to lose yourself in the service of others.
                         </blockquote>
                         <p className="text-right font-medium text-lg">- Mahatma Gandhi</p>
                     </div>
