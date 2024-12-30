@@ -305,7 +305,7 @@ export default function Navbar() {
                     Join US
                   </a>
                   <a
-                    href="https://blog.racuwu.com/"  target="_blank" rel="noopener noreferrer"
+                    href="https://blog.racuwu.com/blog"  target="_blank" rel="noopener noreferrer"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-[#D51067] hover:bg-gray-50"
                   >
                     Visit Blog
