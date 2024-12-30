@@ -6,9 +6,9 @@ import { IoTrophyOutline } from 'react-icons/io5';
 const clubHistory = [
   {
     date: "2023-2024",
-    topDes: "Empowering Through Service",
+    topDes: "Rotaract is not always about the place or the club, Its about people. When you are surrounded with right people, no one can stop you.",
     ipp: "IPP",
-    content: "Rtr. Thisal Walgampaya",
+    ippdescription: "Rtr. Thisal Walgampaya",
     sec: "Joint Secretaries",
     secdescription: "Rtr. Gayathma Weerawanni, Rtr. Sachini Madushka",
     noOfBOD: "No of Board Members: 30",
@@ -214,18 +214,18 @@ const clubHistory = [
 
 const ClubHistory = () => (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
         <h1 className="text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
           Our Journey Through Time
         </h1>
 
         <div className="relative">
-          {/* Timeline line */}
           <div
-              className="absolute left-1/2 h-full w-0.5 bg-gradient-to-b from-purple-600 to-pink-600 transform -translate-x-1/2"/>
+              className="absolute left-1/2 top-0 h-full w-0.5 bg-gradient-to-b from-purple-600 to-pink-600 transform -translate-x-1/2 z-0"
+          />
 
           {clubHistory.map((item, index) => (
-              <div key={index} className="mb-24">
+              <div key={index} className="relative mb-24">
                 {/* Year marker */}
                 <div className="relative flex justify-center mb-8">
                   <div className="absolute w-32 h-32 bg-pink-50 rounded-full opacity-50 transform -translate-x-1/2 -translate-y-1/2" />
@@ -238,9 +238,9 @@ const ClubHistory = () => (
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {/* Quote Section */}
-                  <div className={`${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'} ${index % 2 === 0 ? 'md:col-start-1' : 'md:col-start-2'}`}>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+                  {/* Moment of Pride (Quotes) Section */}
+                  <div className="md:pr-12">
                     <div className="bg-white rounded-2xl shadow-xl p-8 transform transition-all hover:scale-105 hover:shadow-2xl border border-purple-100">
                       <div className="relative">
                         <FaQuoteLeft className="absolute -top-4 -left-4 w-8 h-8 text-pink-200" />
@@ -253,7 +253,7 @@ const ClubHistory = () => (
                             <FaUserTie className="w-6 h-6 text-purple-600" />
                             <h3 className="font-semibold text-purple-900 text-lg">{item.ipp}</h3>
                           </div>
-                          <p className="text-gray-700 pl-9">{item.content}</p>
+                          <p className="text-gray-700 pl-9">{item.ippdescription}</p>
                         </div>
 
                         <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-4">
@@ -273,7 +273,7 @@ const ClubHistory = () => (
                   </div>
 
                   {/* Achievements Section */}
-                  <div className={`${index % 2 === 0 ? 'md:pl-12' : 'md:pr-12'}`}>
+                  <div className="md:pl-12">
                     <div className="bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl shadow-xl p-1">
                       <div className="bg-white rounded-xl p-8">
                         <div className="flex items-center gap-3 mb-6">
@@ -297,6 +297,6 @@ const ClubHistory = () => (
         </div>
       </div>
     </div>
-)
+);
 
 export default ClubHistory;
