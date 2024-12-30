@@ -1,6 +1,39 @@
 import PageHeader from "@/components/PageHeader";
+import {BiCalendar, BiCalendarStar} from 'react-icons/bi';
+import {FaUserTie, FaUsers, FaQuoteLeft} from 'react-icons/fa';
+import { IoTrophyOutline } from 'react-icons/io5';
 
 const clubHistory = [
+  {
+    date: "2023-2024",
+    topDes: "Empowering Through Service",
+    ipp: "IPP",
+    content: "Rtr. Thisal Walgampaya",
+    sec: "Joint Secretaries",
+    secdescription: "Rtr. Gayathma Weerawanni, Rtr. Sachini Madushka",
+    noOfBOD: "No of Board Members: 30",
+    detailsTitle: "Achievements & Recognition",
+    details: [
+      "🏆 Most Outstanding Cluster Project - Silver (Arogyam)",
+      "🏆 Most Outstanding Initiative with the Rotary Club - Silver (Daas)",
+      "🏆 Most Outstanding Inter-Zonal Initiative - Bronze (Compagnia)",
+      "🏆 Most Outstanding Professional Development Initiative - Merit (Innovitroz 2.0)",
+      "🏆 Most Outstanding Club Service Initiative (Inclusivity and Diversity) - Aikya",
+      "🏆 Most Outstanding International Understanding Initiative - Nominee (Meloverse 1.0 - Thaala)",
+      "🏆 Most Outstanding Initiative for the Rotary Focus Area Basic Education and Literacy Nominee - Pillam",
+      "🏆 Most Outstanding Fundraiser in aid of Service Nominee - Pillam",
+      "🏆 Most Outstanding Annual Report Nominee - Rotaract Club of Uva Wellassa University-Badulla",
+      "🏅 Award of Appreciation for Hosting District Council Meeting - March",
+      "🏅 Rotaract District Citation - Gold Distinction",
+      "🏅 Award of Appreciation for Hosting - Brandin | The Next Level",
+      "🏅 Award of Appreciation for Hosting - V craft",
+      "🏆 Most Outstanding Secretaries - Rtr. Gayathma Weerawanni & Rtr. Sachini Madushka",
+      "🏅 Meritorious Leadership Award - Rtr. Thisal Walgampaya",
+      "🏅 Spirit of the Service - Rtr. Gayathma Weerawanni",
+      "🏅 President of the Month December - Rtr. Thisal Walgampaya",
+      "🏅 Secretaries of the Month September - Rtr. Sachini Madushka & Rtr. Gayathma Weerawanni"
+    ]
+  },
   {
     date: "2022-2023",
     topDes:
@@ -180,62 +213,90 @@ const clubHistory = [
 ];
 
 const ClubHistory = () => (
-  <>
-    <PageHeader title="Club History" />
-    <div className="flex flex-col items-center mt-[80px] mr-8">
-      <ul
-        aria-label="Changelog feed"
-        role="feed"
-        className="max-w-[1140px] my-8 relative flex flex-col gap-12 py-12 pl-6 before:absolute before:top-0 before:left-6 before:h-full before:-translate-x-1/2 before:border before:border-dashed before:border-slate-200 after:absolute after:top-6 after:left-6 after:bottom-6 after:-translate-x-1/2 after:border after:border-slate-200"
-      >
-        {clubHistory.map((changelog, index) => (
-          <li
-            key={index}
-            role="article"
-            className="relative pl-6 before:absolute before:left-0 before:top-2 before:z-10 before:h-2 before:w-2 before:-translate-x-1/2 before:rounded-full before:bg-[#D51067] before:ring-2 before:ring-white"
-          >
-            <div className="flex flex-col flex-1 gap-4 border-2 border-[#D51067]/50 rounded-3xl p-8">
-              <h4 className="text-lg font-medium text-[#D51067]">
-                {changelog.date}{" "}
-                <span className="text-lg font-normal text-slate-500"></span>{" "}
-              </h4>
-              <span className="text-lg font-normal text-slate-500">
-                {changelog.topDes}
-              </span>{" "}
-              <h4 className="text-lg font-medium text-[#D51067]">
-                {changelog.ipp}{" "}
-                <span className="text-lg font-normal text-slate-500">
-                  {" "}
-                  - {changelog.ippdescription}
-                </span>{" "}
-              </h4>
-              <h4 className="text-lg font-medium text-[#D51067]">
-                {changelog.sec}{" "}
-                <span className="text-lg font-normal text-slate-500">
-                  {" "}
-                  - {changelog.secdescription}
-                </span>{" "}
-              </h4>
-              <h4 className="text-lg font-medium text-[#D51067]">
-                {changelog.noOfBOD}{" "}
-              </h4>
-              <h4 className="text-lg font-medium text-[#D51067]">
-                {changelog.detailsTitle}{" "}
-              </h4>
-              <p className="text-slate-500">{changelog.description}</p>
-              {changelog.details && (
-                <ul className="pl-5 md:pl-12 list-disc text-slate-500 marker:text-[#D51067]">
-                  {changelog.details.map((detail, index) => (
-                    <li key={index}>{detail}</li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          </li>
-        ))}
-      </ul>
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 className="text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
+          Our Journey Through Time
+        </h1>
+
+        <div className="relative">
+          {/* Timeline line */}
+          <div
+              className="absolute left-1/2 h-full w-0.5 bg-gradient-to-b from-purple-600 to-pink-600 transform -translate-x-1/2"/>
+
+          {clubHistory.map((item, index) => (
+              <div key={index} className="mb-24">
+                {/* Year marker */}
+                <div className="relative flex justify-center mb-8">
+                  <div className="absolute w-32 h-32 bg-pink-50 rounded-full opacity-50 transform -translate-x-1/2 -translate-y-1/2" />
+                  <div className="absolute w-24 h-24 bg-pink-100 rounded-full opacity-50 transform -translate-x-1/2 -translate-y-1/2" />
+                  <div className="relative w-16 h-16 bg-white rounded-full border-4 border-pink-600 transform -translate-y-1/2 flex items-center justify-center shadow-lg z-10">
+                    <BiCalendarStar className="w-8 h-8 text-pink-600" />
+                  </div>
+                  <div className="absolute top-1/2 transform -translate-y-1/2">
+                    <h2 className="text-3xl font-bold text-purple-600 text-center mt-8">{item.date}</h2>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  {/* Quote Section */}
+                  <div className={`${index % 2 === 0 ? 'md:pr-12' : 'md:pl-12'} ${index % 2 === 0 ? 'md:col-start-1' : 'md:col-start-2'}`}>
+                    <div className="bg-white rounded-2xl shadow-xl p-8 transform transition-all hover:scale-105 hover:shadow-2xl border border-purple-100">
+                      <div className="relative">
+                        <FaQuoteLeft className="absolute -top-4 -left-4 w-8 h-8 text-pink-200" />
+                        <p className="text-gray-600 italic text-lg pt-4 px-4">{item.topDes}</p>
+                      </div>
+
+                      <div className="mt-8 space-y-6">
+                        <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-4">
+                          <div className="flex items-center gap-3 mb-2">
+                            <FaUserTie className="w-6 h-6 text-purple-600" />
+                            <h3 className="font-semibold text-purple-900 text-lg">{item.ipp}</h3>
+                          </div>
+                          <p className="text-gray-700 pl-9">{item.content}</p>
+                        </div>
+
+                        <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-4">
+                          <div className="flex items-center gap-3 mb-2">
+                            <FaUserTie className="w-6 h-6 text-purple-600" />
+                            <h3 className="font-semibold text-purple-900 text-lg">{item.sec}</h3>
+                          </div>
+                          <p className="text-gray-700 pl-9">{item.secdescription}</p>
+                        </div>
+
+                        <div className="flex items-center gap-3 pl-4">
+                          <FaUsers className="w-6 h-6 text-pink-600" />
+                          <p className="text-gray-700 font-medium">{item.noOfBOD}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Achievements Section */}
+                  <div className={`${index % 2 === 0 ? 'md:pl-12' : 'md:pr-12'}`}>
+                    <div className="bg-gradient-to-br from-purple-600 to-pink-600 rounded-2xl shadow-xl p-1">
+                      <div className="bg-white rounded-xl p-8">
+                        <div className="flex items-center gap-3 mb-6">
+                          <IoTrophyOutline className="w-8 h-8 text-pink-600" />
+                          <h3 className="font-bold text-gray-900 text-xl">{item.detailsTitle}</h3>
+                        </div>
+                        <ul className="space-y-4">
+                          {item.details.map((detail, idx) => (
+                              <li key={idx} className="flex items-start gap-3">
+                                <span className="w-2 h-2 rounded-full bg-pink-600 mt-2 flex-shrink-0" />
+                                <p className="text-gray-600 leading-relaxed">{detail}</p>
+                              </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          ))}
+        </div>
+      </div>
     </div>
-  </>
-);
+)
 
 export default ClubHistory;
