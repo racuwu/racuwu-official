@@ -4,7 +4,9 @@ import NumberSpringBanner from "@/components/banner/NumberSpringBanner";
 import GoogleMapComponent from "@/components/GoogleMap";
 import PageHeader from "@/components/PageHeader";
 import GallerySection from "@/components/cards/ImageCard";
+import AwardsSection from "@/components/AwardsSection";
 // import Image from "next/image";
+import { FaHandsHelping, FaGlobe, FaTree } from 'react-icons/fa';
 
 export default function Home() {
   // Array of data for each FeaturesCard
@@ -94,41 +96,91 @@ export default function Home() {
 
   return (
     <>
-      <PageHeader title="About Us" />
-      <div className="flex flex-col items-center mt-[80px]">
-        <p className="text-center max-w-[1140px] mt-8 mx-4 text-gray-500 border-pink-100 rounded-xl border-2 p-4">
-          We are a professional voluntary movement that focuses on six avenues:
-          Community Service, Club Service, Professional Development,
-          International Service, Public Relations, and Environment Service.The
-          purpose of our club is to provide opportunities for young adults to
-          develop leadership skills, promote global citizenship, and encourage
-          community service. We organize and participate in a variety of service
-          projects, fundraisers, and social events.We are open to young adults
-          from all backgrounds and professions who share a commitment to service
-          and making a difference in their communities. It is a great way to
-          meet new people, develop professional skills, and make a positive
-          impact on the world.
-        </p>
-        <div className="grid md:grid-cols-2  gap-4 max-w-[1140px] py-8 mx-4">
-          <div className="rounded-xl border-2 border-pink-100 pb-16">
-            <TwoLineTitle
-              main="Our Vision"
-              sub="Together, we see a world where people unite and take action to create lasting change — across the globe, in our communities, and in ourselves."
-            />
+      <div className="min-h-screen bg-gradient-to-r from-gray-50 to-white py-20">
+        <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
+          {/* Header Section */}
+          <div className="text-center mb-16 animate__animated animate__fadeInDown mt-16">
+            <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-400">
+              About Us
+            </h1>
+            <p className="mt-4 text-gray-600 text-lg max-w-2xl mx-auto">
+              We are a professional voluntary movement dedicated to creating impactful change through community service,
+              leadership development, and global citizenship.
+            </p>
           </div>
-          <div className="rounded-xl border-2 border-pink-100 pb-16">
-            <TwoLineTitle
-              main="Our Mission"
-              sub="Is to provide service to others, promote integrity, and advance world understanding, goodwill, and peace through its fellowship of business, professional, and community leaders."
-            />
+
+          {/* Core Values Section */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-20">
+            <div
+                className="p-8 bg-white shadow-lg rounded-3xl transform hover:scale-105 transition duration-300 animate__animated animate__zoomIn">
+              <div className="flex justify-center mb-6">
+                <FaHandsHelping className="text-pink-600 w-12 h-12"/>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 text-center mb-4">Community Service</h3>
+              <p className="text-gray-600 text-center">
+                Collaborating with communities to address pressing social needs and improve quality of life.
+              </p>
+            </div>
+
+            <div
+                className="p-8 bg-white shadow-lg rounded-3xl transform hover:scale-105 transition duration-300 animate__animated animate__zoomIn animate__delay-1s">
+              <div className="flex justify-center mb-6">
+                <FaGlobe className="text-pink-600 w-12 h-12"/>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 text-center mb-4">Global Citizenship</h3>
+              <p className="text-gray-600 text-center">
+                Fostering international understanding and goodwill through cross-cultural connections.
+              </p>
+            </div>
+
+            <div
+                className="p-8 bg-white shadow-lg rounded-3xl transform hover:scale-105 transition duration-300 animate__animated animate__zoomIn animate__delay-2s">
+              <div className="flex justify-center mb-6">
+                <FaTree className="text-pink-600 w-12 h-12"/>
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 text-center mb-4">Environmental Stewardship</h3>
+              <p className="text-gray-600 text-center">
+                Leading initiatives to preserve our planet and promote sustainable practices.
+              </p>
+            </div>
+          </div>
+
+          {/* Vision & Mission Section */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div
+                className="p-10 bg-gradient-to-br from-pink-600 to-purple-400 text-white rounded-3xl shadow-lg relative overflow-hidden animate__animated animate__fadeInLeft">
+              <div className="absolute inset-0 bg-white opacity-10 rounded-3xl"/>
+              <h2 className="text-4xl font-extrabold mb-6 relative z-10">Our Vision</h2>
+              <p className="text-lg relative z-10">
+                Together, we see a world where people unite and take action to create lasting change — across the globe,
+                in
+                our communities, and in ourselves.
+              </p>
+            </div>
+
+            <div
+                className="p-10 bg-gradient-to-br from-gray-50 to-white border-2 border-pink-100 rounded-3xl shadow-lg relative animate__animated animate__fadeInRight">
+              <h2 className="text-4xl font-extrabold text-pink-600 mb-6">Our Mission</h2>
+              <p className="text-lg text-gray-700">
+                To provide service to others, promote integrity, and advance world understanding, goodwill, and peace
+                through its fellowship of business, professional, and community leaders.
+              </p>
+            </div>
+          </div>
+
+          {/* Call to Action */}
+          <div className="mt-20 text-center animate__animated animate__fadeInUp">
+            <button
+                className="px-8 py-4 bg-gradient-to-r from-pink-600 to-purple-400 text-white font-bold text-lg rounded-full shadow-lg transform hover:scale-105 transition duration-300">
+              Join Us and Make a Difference
+            </button>
           </div>
         </div>
-        <TwoLineTitle sub="Honors And Achievements" main="Awards" />
-
-        <NumberSpringBanner />
-        <GallerySection gallery={gallery}/>
       </div>
-      <GoogleMapComponent />
+
+      <AwardsSection/>
+      <GallerySection gallery={gallery}/>
+      <GoogleMapComponent/>
     </>
   );
 }
