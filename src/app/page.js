@@ -11,6 +11,7 @@ import WhoAreWe from "@/components/WhoAreWe";
 import NavigationGrid from "@/components/QuickNavigation";
 import AwardsSection from "@/components/AwardsSection";
 import GallerySection from "@/components/cards/ImageCard";
+import Achievements from "@/components/AwardsSection";
 // import Image from "next/image";
 
 export default function Home() {
@@ -112,7 +113,7 @@ export default function Home() {
                 ))}
             </div>
             <GallerySection gallery={gallery}/>
-            <AwardsSection/>
+            <Achievements/>
             <NavigationGrid/>
             <ContactForm/>
             {/* <Footer /> */}

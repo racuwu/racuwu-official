@@ -1,95 +1,153 @@
-import React from 'react';
+"use client";
 
-const AwardsSection = () => {
-    const awards = [
-        {
-            name: "Most Outstanding Club",
-            description: "Club of the Year",
-            year: "2021-2022",
-            icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12" viewBox="0 0 24 24">
-                    <path fill="currentColor" d="M12 7a8 8 0 1 1 0 16a8 8 0 0 1 0-16m0 2a6 6 0 1 0 0 12a6 6 0 0 0 0-12m0 1.5l1.322 2.68l2.958.43l-2.14 2.085l.505 2.946L12 17.25l-2.645 1.39l.505-2.945l-2.14-2.086l2.958-.43zM18 2v3l-1.363 1.138A9.935 9.935 0 0 0 13 5.049V2zm-7-.001v3.05a9.935 9.935 0 0 0-3.636 1.088L6 5V2z" />
-                </svg>
-            )
-        },
-        {
-            name: "Wew Diyawara",
-            description: "Most Sustainable Community Service Initiative",
-            year: "2021-2022",
-            icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12" viewBox="0 0 24 24">
-                    <path fill="currentColor" d="M12 7a8 8 0 1 1 0 16a8 8 0 0 1 0-16m0 2a6 6 0 1 0 0 12a6 6 0 0 0 0-12m0 1.5l1.322 2.68l2.958.43l-2.14 2.085l.505 2.946L12 17.25l-2.645 1.39l.505-2.945l-2.14-2.086l2.958-.43zM18 2v3l-1.363 1.138A9.935 9.935 0 0 0 13 5.049V2zm-7-.001v3.05a9.935 9.935 0 0 0-3.636 1.088L6 5V2z" />
-                </svg>
-            )
-        },
-        {
-            name: "Miridiya",
-            description: "Most Outstanding Inter Regional Initiative",
-            year: "2021-2022",
-            icon: (
-                <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12" viewBox="0 0 24 24">
-                    <path fill="currentColor" d="M12 7a8 8 0 1 1 0 16a8 8 0 0 1 0-16m0 2a6 6 0 1 0 0 12a6 6 0 0 0 0-12m0 1.5l1.322 2.68l2.958.43l-2.14 2.085l.505 2.946L12 17.25l-2.645 1.39l.505-2.945l-2.14-2.086l2.958-.43zM18 2v3l-1.363 1.138A9.935 9.935 0 0 0 13 5.049V2zm-7-.001v3.05a9.935 9.935 0 0 0-3.636 1.088L6 5V2z" />
-                </svg>
-            )
-        }
-    ];
+import { useState } from 'react';
+import { BiTrophy } from 'react-icons/bi';
+import { AiOutlineStar } from 'react-icons/ai';
+import { FiAward, FiChevronDown, FiChevronUp } from 'react-icons/fi';
+import { GiMedal } from 'react-icons/gi';
+
+const CategorySection = ({ title, items, isOpen, onToggle }) => (
+    <div className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/10 overflow-hidden">
+        <button
+            onClick={onToggle}
+            className="w-full p-4 flex items-center justify-between text-white hover:bg-white/5 transition-colors"
+        >
+            <span className="text-lg font-semibold">{title}</span>
+            {isOpen ?
+                <FiChevronUp className="w-5 h-5 text-pink-500" /> :
+                <FiChevronDown className="w-5 h-5 text-pink-500" />
+            }
+        </button>
+        <div className={`transition-all duration-300 ${isOpen ? 'max-h-[800px]' : 'max-h-0'}`}>
+            <div className="p-4 grid gap-4 grid-cols-1 md:grid-cols-2">
+                {items.map((item, index) => (
+                    <div key={index} className="bg-white/5 backdrop-blur-sm p-4 rounded-lg border border-white/10 transition-all duration-300 hover:bg-white/10">
+                        <span className="text-2xl">{item.icon}</span>
+                        <p className="mt-2 text-sm text-gray-300">{item.text}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </div>
+);
+
+const Achievements = () => {
+    const [openSection, setOpenSection] = useState('major');
+
+    const achievements = {
+        major: [
+            { icon: "🏆", text: "Most Outstanding Cluster Project - Silver (Arogyam)" },
+            { icon: "🏆", text: "Most Outstanding Initiative with Rotary Club - Silver (Daas)" },
+            { icon: "🏆", text: "Most Outstanding Inter-Zonal Initiative - Bronze (Compagnia)" },
+            { icon: "🏆", text: "Most Outstanding Professional Development - Merit (Innovitroz 2.0)" }
+        ],
+        nominees: [
+            { icon: "🏆", text: "Club Service Initiative (Inclusivity and Diversity) - Aikya" },
+            { icon: "🏆", text: "International Understanding Initiative (Meloverse 1.0 - Thaala)" },
+            { icon: "🏆", text: "Basic Education and Literacy Initiative - Pillam" },
+            { icon: "🏆", text: "Fundraiser in aid of Service - Pillam" },
+            { icon: "🏆", text: "Annual Report - Rotaract Club of UWU-Badulla" }
+        ],
+        recognition: [
+            { icon: "🏅", text: "Award of Appreciation - District Council Meeting (March)" },
+            { icon: "🏅", text: "Rotaract District Citation - Gold Distinction" },
+            { icon: "🏅", text: "Award of Appreciation - Brandin | The Next Level" },
+            { icon: "🏅", text: "Award of Appreciation - V craft" }
+        ],
+        individual: [
+            { icon: "🏆", text: "Most Outstanding Secretaries - Rtr. Gayathma & Rtr. Sachini" },
+            { icon: "🏅", text: "Meritorious Leadership Award - Rtr. Thisal Walgampaya" },
+            { icon: "🏅", text: "Spirit of the Service - Rtr. Gayathma Weerawanni" },
+            { icon: "🏅", text: "President of the Month (December) - Rtr. Thisal" },
+            { icon: "🏅", text: "Secretaries of the Month (September) - Rtr. Sachini & Rtr. Gayathma" }
+        ]
+    };
 
     return (
         <section className="relative overflow-hidden py-20">
-            {/* Background Image with Overlay */}
             <div
                 className="absolute inset-0 bg-cover bg-center bg-fixed"
                 style={{
                     backgroundImage: "url('assets/images/bg/awards-covers-scaled.webp')",
                 }}
             >
-                <div className="absolute inset-0 bg-gradient-to-r from-black/90 to-black/85" />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/95 to-black/90" />
             </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="flex flex-col lg:flex-row items-center gap-12">
+                <div className="flex flex-col lg:flex-row items-start gap-12">
                     {/* Left Side - Main Achievement */}
-                    <div className="flex-1 space-y-8 text-white animate__animated animate__fadeInLeft">
+                    <div className="lg:sticky lg:top-20 lg:flex-1 space-y-8 text-white animate__animated animate__fadeInLeft">
                         <div className="space-y-4">
                             <h2 className="text-4xl md:text-5xl font-bold tracking-tight">
                                 <span className="block">Excellence in</span>
                                 <span className="block mt-2 bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-purple-500">
-                                    Leadership & Service
-                                </span>
+                  Leadership & Service
+                </span>
                             </h2>
-
                             <div className="w-24 h-1 bg-gradient-to-r from-pink-500 to-purple-500" />
                         </div>
 
-                        <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/10 animate__animated animate__fadeInUp animate__delay-1s">
-                            <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">50+</div>
+                        <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/10">
+                            <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500">
+                                18+
+                            </div>
                             <div className="mt-2 text-xl font-medium">Awards & Recognition</div>
-                            <div className="mt-1 text-gray-300">2013 - Present</div>
+                            <div className="mt-1 text-gray-300">2023 - 2024</div>
                             <p className="mt-4 text-gray-200">
-                                A decade of excellence, leadership, and impactful community service recognized through numerous accolades and achievements.
+                                An exceptional year of achievements, showcasing our dedication to service,
+                                leadership development, and community impact.
                             </p>
+                        </div>
+
+                        <div className="grid grid-cols-2 gap-4">
+                            {[
+                                { icon: <BiTrophy size={24} />, label: "Major Awards", count: "4" },
+                                { icon: <AiOutlineStar size={24} />, label: "Nominations", count: "5" },
+                                { icon: <FiAward size={24} />, label: "Recognition", count: "4" },
+                                { icon: <GiMedal size={24} />, label: "Individual", count: "5" }
+                            ].map((stat, index) => (
+                                <button
+                                    key={index}
+                                    onClick={() => setOpenSection(stat.label.toLowerCase())}
+                                    className={`bg-white/10 backdrop-blur-sm p-4 rounded-xl border border-white/10 text-center transition-all duration-300 hover:bg-white/20 ${
+                                        openSection === stat.label.toLowerCase() ? 'ring-2 ring-pink-500' : ''
+                                    }`}
+                                >
+                                    <div className="flex justify-center text-pink-500">{stat.icon}</div>
+                                    <div className="mt-2 text-2xl font-bold">{stat.count}</div>
+                                    <div className="text-sm text-gray-300">{stat.label}</div>
+                                </button>
+                            ))}
                         </div>
                     </div>
 
-                    {/* Right Side - Awards Grid */}
-                    <div className="flex-1 w-full">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate__animated animate__fadeInRight">
-                            {awards.map((award, index) => (
-                                <div
-                                    key={index}
-                                    className="bg-white/10 backdrop-blur-sm p-6 rounded-xl border border-white/10 text-white transition-all duration-300 hover:bg-white/20 group"
-                                >
-                                    <div className="text-pink-500 group-hover:scale-110 transition-transform duration-300">
-                                        {award.icon}
-                                    </div>
-                                    <div className="mt-4">
-                                        <div className="text-lg font-semibold">{award.name}</div>
-                                        <div className="text-sm text-gray-300 mt-1">{award.description}</div>
-                                        <div className="text-sm text-pink-500 mt-2">{award.year}</div>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
+                    {/* Right Side - Awards Categories */}
+                    <div className="lg:flex-1 w-full space-y-6 animate__animated animate__fadeInRight">
+                        <CategorySection
+                            title="Major Awards"
+                            items={achievements.major}
+                            isOpen={openSection === 'major'}
+                            onToggle={() => setOpenSection(openSection === 'major' ? '' : 'major')}
+                        />
+                        <CategorySection
+                            title="Nominations"
+                            items={achievements.nominees}
+                            isOpen={openSection === 'nominations'}
+                            onToggle={() => setOpenSection(openSection === 'nominations' ? '' : 'nominations')}
+                        />
+                        <CategorySection
+                            title="Special Recognition"
+                            items={achievements.recognition}
+                            isOpen={openSection === 'recognition'}
+                            onToggle={() => setOpenSection(openSection === 'recognition' ? '' : 'recognition')}
+                        />
+                        <CategorySection
+                            title="Individual Excellence"
+                            items={achievements.individual}
+                            isOpen={openSection === 'individual'}
+                            onToggle={() => setOpenSection(openSection === 'individual' ? '' : 'individual')}
+                        />
                     </div>
                 </div>
             </div>
@@ -97,4 +155,4 @@ const AwardsSection = () => {
     );
 };
 
-export default AwardsSection;
+export default Achievements;
