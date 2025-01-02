@@ -1,61 +1,110 @@
-import PageHeader from "@/components/PageHeader";
-import CardHorizontal from "@/components/cards/HorizontalCard";
-import React from "react";
+import React from 'react';
+import {BiTime, BiTag} from 'react-icons/bi';
+import {format} from 'date-fns';
 
-const Projects = () => {
-  const project = [
-    {
-      imageUrl: "assets/images/news/bod.jpg",
-      title: "Calling for the Next Generation of Wolves to Lead the Pack",
-      subtitle:
-        "Please note that this is only applicable for second-year Rotaractors.",
-      content:
-        "Calling Applications for the Board of Directors of Rotaract Club of Uva Wellassa University - Badulla 2024-25 A year has passed, and the time has come for the next pack of wolves to lead the Rotaract Pack to greater heights! We hereby call for applications for the Board of Directors of Rotaract Club of Uva Wellassa University - Badulla.",
-      url: "https://forms.gle/PCmDVjZFGUoNn5Ng9",
-      urlText: "Apply Now!",
-    },
-    {
-      imageUrl: "assets/images/news/excoelect.jpg",
-      title:
-        "Congratulations to the next Alpha and his Executive Committee of the club",
-      subtitle: "Executive Committee | RI Year 2024-25 Elect",
-      content:
-        "President Elect- Pavithre Wikramarathna, Joint Secretary Elect - Chandima Jayawardana , Joint Secretary Elect - Nethmini Karunarathne, Vice President Elect for Membership Development and Retention - Nethmini Wikramasinge, Vice President Elect for Projects - Hasanga Savindra, Vice President Elect for Projects - Kesara Jayasinghe, Treasurer Elect - Rushmi Rosario , Sergeant at Arms Elect - Lohitha Gimhan",
-      url: "null",
-      urlText: "",
-    },
-
-    {
-      imageUrl: "assets/images/news/easterart.jpg",
-      title: "SUBMISSIONS CLOSED",
-      subtitle:
-        "The time given for submissions to the Easter Art Competition is now officially finished.",
-      content:
-        "Submissions for the Easter Art Competition have officially closed, marking the end of a vibrant and creative period. We extend our heartfelt gratitude to all participants for sharing their cherished artworks. Your contributions have added color, joy, and inspiration to our event. Thank you for your enthusiasm and dedication. As we move forward, we eagerly anticipate the delightful task of reviewing and celebrating your masterpieces.",
-      url: "null",
-    },
-  ];
-  return (
-    <>
-      <PageHeader title="News" />
-
-      {/* <div className="flex flex-col items-center justify-center pt-[80px]"> */}
-        <div className="flex flex-col justify-center items-center pt-[80px] px-4">
-          {project.map((data, index) => (
-            <CardHorizontal
-              key={index}
-              imageUrl={data.imageUrl}
-              title={data.title}
-              subtitle={data.subtitle}
-              content={data.content}
-              url={data.url}
-              urlText={data.urlText}
-            />
-          ))}
-        </div>
-      {/* </div> */}
-    </>
-  );
+const fetchPosts = async () => {
+    const response = await fetch(
+        'https://racuwu-dev.azurewebsites.net/api/posts/search?tags=4&limit=100',
+        {next: {revalidate: 3600}}
+    );
+    const data = await response.json();
+    // Sort posts by date, with the newest first
+    return data.data.posts.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
 };
 
-export default Projects;
+const NewsHero = ({article}) => {
+    const date = new Date(article.publishedAt);
+
+    return (
+        <div className="relative h-[70vh] w-full mb-12">
+            <img
+                src={article.image}
+                alt={article.title}
+                className="w-full h-full object-cover rounded-lg"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-75 rounded-lg"/>
+            <div className="absolute bottom-8 left-8 text-white">
+                <h1 className="text-5xl font-bold mb-4">{article.title}</h1>
+                <div className="flex items-center gap-4 text-sm mb-2">
+                    <span className="flex items-center gap-2">
+                        <BiTime className="text-red-500"/>
+                        {format(date, 'MMM dd, yyyy')}
+                    </span>
+                    {article.tags.map(tag => (
+                        <span key={tag.id} className="flex items-center gap-2">
+                            <BiTag className="text-red-500"/>
+                            {tag.name}
+                        </span>
+                    ))}
+                </div>
+                <p className="text-lg text-gray-300">{article.excerpt}</p>
+            </div>
+        </div>
+    );
+};
+
+const ArticleCard = ({article}) => {
+    const date = new Date(article.publishedAt);
+
+    return (
+        <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-transform">
+            <img
+                src={article.image}
+                alt={article.title}
+                className="w-full h-48 object-cover"
+            />
+            <div className="p-4">
+                <div className="flex items-center gap-4 text-sm text-gray-500 mb-2">
+                    <span className="flex items-center gap-1">
+                        <BiTime/>
+                        {format(date, 'MMM dd, yyyy')}
+                    </span>
+                    {article.tags.map(tag => (
+                        <span key={tag.id} className="flex items-center gap-1">
+                            <BiTag/>
+                            {tag.name}
+                        </span>
+                    ))}
+                </div>
+                <h2 className="text-xl font-semibold mb-2">{article.title}</h2>
+                <p className="text-gray-600 line-clamp-3">{article.excerpt}</p>
+            </div>
+        </div>
+    );
+};
+
+const News = async () => {
+    const posts = await fetchPosts();
+    const [heroPost, ...otherPosts] = posts;
+
+    return (
+        <div className="min-h-screen bg-gray-50 py-12 px-6 sm:px-8 lg:px-16">
+            <div className="max-w-7xl mx-auto  pt-16">
+                {/* Hero Section */}
+                <NewsHero article={heroPost}/>
+
+                {/* Top Articles */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+
+                    {otherPosts.slice(0, 2).map(post => (
+                        <a href={`https://blog.racuwu.com/posts/${post.id}`}>
+                            <ArticleCard key={post.id} article={post}/>
+                        </a>
+                    ))}
+                </div>
+
+                {/* Remaining Articles */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    {posts.map(post => (
+                        <a href={`https://blog.racuwu.com/post/${post.id}`}>
+                            <ArticleCard key={post.id} article={post}/>
+                        </a>
+                    ))}
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default News;
