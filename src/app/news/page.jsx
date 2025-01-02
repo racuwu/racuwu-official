@@ -87,7 +87,7 @@ const News = async () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
 
                     {otherPosts.slice(0, 2).map(post => (
-                        <a href={`https://blog.racuwu.com/posts/${post.id}`}>
+                        <a key={post.id} href={`https://blog.racuwu.com/posts/${post.id}`}>
                             <ArticleCard key={post.id} article={post}/>
                         </a>
                     ))}
@@ -97,7 +97,7 @@ const News = async () => {
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
 
                     {posts.map(post => (
-                        <a href={`https://blog.racuwu.com/post/${post.id}`}>
+                        <a key={post.id} href={`https://blog.racuwu.com/post/${post.id}`}>
                             <ArticleCard key={post.id} article={post}/>
                         </a>
                     ))}
