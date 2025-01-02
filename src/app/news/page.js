@@ -24,7 +24,7 @@ const NewsHero = ({article}) => {
             />
             <div className="absolute inset-0 bg-black bg-opacity-75 rounded-lg"/>
             <div className="absolute bottom-8 left-8 text-white">
-                <h1 className="text-5xl font-bold mb-4">{article.title}</h1>
+                <h1 className="text-6xl font-bold mb-4">{article.title}</h1>
                 <div className="flex items-center gap-4 text-sm mb-2">
                     <span className="flex items-center gap-2">
                         <BiTime className="text-red-500"/>
@@ -37,7 +37,6 @@ const NewsHero = ({article}) => {
                         </span>
                     ))}
                 </div>
-                <p className="text-lg text-gray-300">{article.excerpt}</p>
             </div>
         </div>
     );
