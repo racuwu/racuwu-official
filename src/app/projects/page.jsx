@@ -91,7 +91,14 @@ const Projects = () => {
       content:
         "The Professional Development of Rotaract club of Uva Wellassa University successfully completed the 1st phase of the “Hired 3.0” – “Cresco” personal branding virtual workshop on 23rd of Aug 2023. The guest speaker for this workshop was Mr. Chathura Gunarathna Bandara, who is a lecturer in the Department of Export Agriculture at Uva Wellassa University of Sri Lanka.",
     },
-
+    {
+      imageUrl: "/assets/images/projects/featured/uwuinside.jpg",
+      title: "UWU Inside Podcast",
+      subtitle: "Public Relations Avenue",
+      content:
+        "The UWU Inside Podcast is about Uva Wellassa University. It covers various topics related to the university, including academic programs, student life, events, and more. Join us to stay updated and connected with the UWU community.",
+      link: "/projects/insideuwu"
+    },
   ];
   return <>
         <PageHeader title="Projects" />
@@ -119,6 +126,7 @@ const Projects = () => {
               title={data.title}
               subtitle={data.subtitle}
               content={data.content}
+              link={data.link}
             />
           ))}
     
