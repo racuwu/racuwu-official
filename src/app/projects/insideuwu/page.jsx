@@ -3,7 +3,7 @@ import { FaPlay, FaHeadphones, FaClock, FaCalendarAlt, FaMicrophone } from 'reac
 
 const PodcastDetails = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-r from-gray-50 to-white">
+    <div className="min-h-screen bg-gradient-to-r from-gray-50 to-white pt-16">
       {/* Hero Section */}
       <div className="relative bg-gradient-to-r from-purple-900 to-pink-600 text-white py-32">
         <div className="absolute inset-0 bg-black opacity-40"></div>
@@ -48,20 +48,10 @@ const PodcastDetails = () => {
 
         {/* Schedule Tabs */}
         <div className="mb-20">
-          <div className="flex gap-4 mb-6">
-            <button className="flex items-center gap-2 px-6 py-3 bg-purple-600 text-white rounded-lg">
-              <FaCalendarAlt className="text-lg" />
-              January 18th
-            </button>
-            <button className="flex items-center gap-2 px-6 py-3 bg-gray-200 text-gray-700 rounded-lg">
-              <FaCalendarAlt className="text-lg" />
-              January 19th
-            </button>
-          </div>
-
+          
           {/* January 18th Schedule */}
           <div className="mb-20">
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Time Allocation - 18th Jan</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Time Allocation - 19th Jan</h2>
             <table className="min-w-full bg-white border border-gray-200 rounded-lg overflow-hidden">
               <thead className="bg-gray-50">
                 <tr>
@@ -142,7 +132,7 @@ const PodcastDetails = () => {
 
           {/* January 19th Schedule */}
           <div>
-            <h2 className="text-3xl font-bold text-gray-800 mb-4">Time Allocation - 19th Jan</h2>
+            <h2 className="text-3xl font-bold text-gray-800 mb-4">Time Allocation - 20th Jan</h2>
             <table className="min-w-full bg-white border border-gray-200 rounded-lg overflow-hidden">
               <thead className="bg-gray-50">
                 <tr>
@@ -162,21 +152,25 @@ const PodcastDetails = () => {
                   <td className="py-3 px-4 border-b">ICT</td>
                   <td className="py-3 px-4 border-b">Nirmal with Sasini</td>
                 </tr>
-                {/* ... Rest of January 19th schedule ... */}
               </tbody>
             </table>
           </div>
         </div>
 
-        {/* Recording Status Section */}
+                {/* Recording Status Section */}
         <div className="bg-gray-50 p-8 rounded-xl">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">Recording Status</h2>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 mb-4">
             <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
             <p className="text-gray-600 text-lg">
               Recording in progress. Episodes will be available for streaming and download soon.
             </p>
           </div>
+          <ul className="list-disc list-inside text-gray-600 text-lg mb-2">
+            <li>Recording will take place at the Stress-Free Zone from January 19th to January 21st.</li>
+            <li>Both audio and video will be recorded.</li>
+            <li>If your allocated timeslot is unavailable, please contact the representatives.</li>
+          </ul>
         </div>
       </div>
     </div>
