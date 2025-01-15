@@ -21,7 +21,7 @@ const PodcastDetails = () => {
 
         {/* Degree and Representatives Information */}
         <div className="mb-20">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">Degree and Representatives</h2>
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">Time Allocation - 19th Jan</h2>
           <table className="min-w-full bg-white border border-gray-200">
             <thead>
               <tr>
@@ -94,7 +94,7 @@ const PodcastDetails = () => {
         <div>
           <h2 className="text-3xl font-bold text-gray-800 mb-4">Recording Status</h2>
           <p className="text-gray-600 text-lg">
-            Dates: 19th January 2025
+            We are currently recording the podcast and sooner will be available to watch and listen.
           </p>
         </div>
       </div>
