@@ -94,16 +94,7 @@ const PodcastDetails = () => {
         <div>
           <h2 className="text-3xl font-bold text-gray-800 mb-4">Recording Status</h2>
           <p className="text-gray-600 text-lg">
-            Dates: 19, 20, 21 January
-          </p>
-          <p className="text-gray-600 text-lg">
-            Time slots start at 9am and end at 6pm, 45 mins each.
-          </p>
-          <p className="text-gray-600 text-lg">
-            Focus more on 19th.
-          </p>
-          <p className="text-gray-600 text-lg">
-            Currently recording and will be available to watch and listen soon.
+            Dates: 19th January 2025
           </p>
         </div>
       </div>
