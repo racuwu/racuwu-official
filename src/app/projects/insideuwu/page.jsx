@@ -1,8 +1,26 @@
 import React from 'react';
 import { FaPlay, FaHeadphones, FaClock, FaCalendarAlt, FaMicrophone } from 'react-icons/fa';
+import Head from 'next/head';
 
 const PodcastDetails = () => {
+
   return (
+    <>
+      <Head>
+        <title>InsideUWU - Uva Wellassa University Podcast by RACUWUB</title>
+        <meta name="description" content="Your window into the vibrant world of Uva Wellassa University. Join us for insightful conversations, stories, and updates from our diverse academic community." />
+        <meta name="keywords" content="Uva Wellassa University, Podcast, InsideUWU, University Podcast, Academic Community" />
+        <meta name="author" content="Rotaract Club of Uva Wellassa University - Badulla" />
+        <meta property="og:title" content="InsideUWU - Uva Wellassa University Podcast" />
+        <meta property="og:description" content="Your window into the vibrant world of Uva Wellassa University. Join us for insightful conversations, stories, and updates from our diverse academic community." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://yourwebsite.com/insideuwu" />
+        <meta property="og:image" content="https://yourwebsite.com/images/insideuwu-banner.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="InsideUWU - Uva Wellassa University Podcast" />
+        <meta name="twitter:description" content="Your window into the vibrant world of Uva Wellassa University. Join us for insightful conversations, stories, and updates from our diverse academic community." />
+        <meta name="twitter:image" content="https://yourwebsite.com/images/insideuwu-banner.jpg" />
+      </Head>
     <div className="min-h-screen bg-gradient-to-r from-gray-50 to-white pt-16">
       {/* Hero Section */}
       <div className="relative bg-gradient-to-r from-purple-900 to-pink-600 text-white py-32">
@@ -157,7 +175,7 @@ const PodcastDetails = () => {
           </div>
         </div>
 
-                {/* Recording Status Section */}
+        {/* Recording Status Section */}
         <div className="bg-gray-50 p-8 rounded-xl">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">Recording Status</h2>
           <div className="flex items-center gap-4 mb-4">
@@ -174,6 +192,7 @@ const PodcastDetails = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
