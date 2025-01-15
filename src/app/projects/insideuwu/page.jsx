@@ -99,7 +99,7 @@ const PodcastDetails = () => {
                 <tr>
                   <td className="py-3 px-4 border-b">12:00 PM</td>
                   <td className="py-3 px-4 border-b">ANS</td>
-                  <td className="py-3 px-4 border-b">Nirmal with Supuna</td>
+                  <td className="py-3 px-4 border-b">Nirmal with Supun</td>
                 </tr>
                 <tr>
                   <td className="py-3 px-4 border-b">12:45 PM</td>
