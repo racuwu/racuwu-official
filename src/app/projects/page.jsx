@@ -99,6 +99,14 @@ const Projects = () => {
         "The UWU Inside Podcast is about Uva Wellassa University. It covers various topics related to the university, including academic programs, student life, events, and more. Join us to stay updated and connected with the UWU community.",
       link: "/projects/insideuwu"
     },
+    {
+      imageUrl: "/assets/images/projects/featured/lush.jpg",
+      title: "Lush",
+      subtitle: "Community Service",
+      content:
+        "Lush is a project focused on environmental sustainability and community engagement. It aims to create green spaces and promote eco-friendly practices within the community.",
+      link: "/projects/lush"
+    },
   ];
   return <>
         <PageHeader title="Projects" />
