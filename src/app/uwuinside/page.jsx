@@ -69,7 +69,7 @@ const PodcastDetails = () => {
               <tr>
                 <td className="py-2 px-4 border-b">2:15 PM</td>
                 <td className="py-2 px-4 border-b">SCT</td>
-                <td className="py-2 px-4 border-b">Lakindu malli</td>
+                <td className="py-2 px-4 border-b">Lakindu</td>
               </tr>
               <tr>
                 <td className="py-2 px-4 border-b">3:00 PM</td>
