@@ -1,20 +1,6 @@
 import React from "react";
 import { FaCalendarAlt, FaCheckCircle } from "react-icons/fa";
 
-const LushProjectPage = () => {
-  const historyTimeline = [
-    { date: "2020-01-01", event: "Project Initiation" },
-    { date: "2020-06-15", event: "First Milestone Achieved" },
-    { date: "2021-03-10", event: "Second Milestone Achieved" },
-    { date: "2022-08-25", event: "Third Milestone Achieved" },
-  ];
-
-  const currentTimeline = [
-    { date: "2023-01-01", milestone: "Current Milestone 1" },
-    { date: "2023-04-15", milestone: "Current Milestone 2" },
-    { date: "2023-07-10", milestone: "Current Milestone 3" },
-    { date: "2023-10-25", milestone: "Current Milestone 4" },
-  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-gray-50 to-white py-20">
@@ -36,17 +22,7 @@ const LushProjectPage = () => {
             History of Timeline
           </h2>
           <ul className="space-y-4">
-            {historyTimeline.map((item, index) => (
-              <li key={index} className="flex items-center gap-4">
-                <FaCalendarAlt className="text-pink-600 w-6 h-6" />
-                <div>
-                  <p className="text-lg font-semibold text-gray-800">
-                    {item.date}
-                  </p>
-                  <p className="text-gray-600">{item.event}</p>
-                </div>
-              </li>
-            ))}
+            
           </ul>
         </div>
 
@@ -56,17 +32,7 @@ const LushProjectPage = () => {
             Current Project Timeline
           </h2>
           <ul className="space-y-4">
-            {currentTimeline.map((item, index) => (
-              <li key={index} className="flex items-center gap-4">
-                <FaCheckCircle className="text-green-600 w-6 h-6" />
-                <div>
-                  <p className="text-lg font-semibold text-gray-800">
-                    {item.date}
-                  </p>
-                  <p className="text-gray-600">{item.milestone}</p>
-                </div>
-              </li>
-            ))}
+            
           </ul>
         </div>
       </div>
