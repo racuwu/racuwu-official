@@ -19,17 +19,92 @@ const PodcastDetails = () => {
           </p>
         </div>
 
-        {/* Time Schedule Section */}
+        {/* Degree and Representatives Information */}
+        <div className="mb-20">
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">Degree and Representatives</h2>
+          <table className="min-w-full bg-white border border-gray-200">
+            <thead>
+              <tr>
+                <th className="py-2 px-4 border-b">Time Slot</th>
+                <th className="py-2 px-4 border-b">Degree</th>
+                <th className="py-2 px-4 border-b">Representative</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td className="py-2 px-4 border-b">9:00 AM</td>
+                <td className="py-2 px-4 border-b">ICT</td>
+                <td className="py-2 px-4 border-b">Sasini</td>
+              </tr>
+              <tr>
+                <td className="py-2 px-4 border-b">9:45 AM</td>
+                <td className="py-2 px-4 border-b">IIT</td>
+                <td className="py-2 px-4 border-b"></td>
+              </tr>
+              <tr>
+                <td className="py-2 px-4 border-b">10:30 AM</td>
+                <td className="py-2 px-4 border-b">BBST</td>
+                <td className="py-2 px-4 border-b"></td>
+              </tr>
+              <tr>
+                <td className="py-2 px-4 border-b">11:15 AM</td>
+                <td className="py-2 px-4 border-b">ANS</td>
+                <td className="py-2 px-4 border-b">Supuna</td>
+              </tr>
+              <tr>
+                <td className="py-2 px-4 border-b">12:00 PM</td>
+                <td className="py-2 px-4 border-b">EAG</td>
+                <td className="py-2 px-4 border-b">Nirmal</td>
+              </tr>
+              <tr>
+                <td className="py-2 px-4 border-b">12:45 PM</td>
+                <td className="py-2 px-4 border-b">AQT</td>
+                <td className="py-2 px-4 border-b">Chamod</td>
+              </tr>
+              <tr>
+                <td className="py-2 px-4 border-b">1:30 PM</td>
+                <td className="py-2 px-4 border-b">CST</td>
+                <td className="py-2 px-4 border-b"></td>
+              </tr>
+              <tr>
+                <td className="py-2 px-4 border-b">2:15 PM</td>
+                <td className="py-2 px-4 border-b">SCT</td>
+                <td className="py-2 px-4 border-b">Lakindu malli</td>
+              </tr>
+              <tr>
+                <td className="py-2 px-4 border-b">3:00 PM</td>
+                <td className="py-2 px-4 border-b">HTE</td>
+                <td className="py-2 px-4 border-b">Amaya</td>
+              </tr>
+              <tr>
+                <td className="py-2 px-4 border-b">3:45 PM</td>
+                <td className="py-2 px-4 border-b">ENM</td>
+                <td className="py-2 px-4 border-b">Ravindu</td>
+              </tr>
+              <tr>
+                <td className="py-2 px-4 border-b">4:30 PM</td>
+                <td className="py-2 px-4 border-b">HRD</td>
+                <td className="py-2 px-4 border-b">Hansika</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        {/* Recording Status Section */}
         <div>
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">Time Schedule for Recordings</h2>
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">Recording Status</h2>
           <p className="text-gray-600 text-lg">
-            The next recording is scheduled for 19th January 2025. Below are the details:
+            Dates: 19, 20, 21 January
           </p>
-          <ul className="list-disc list-inside mt-4 text-gray-600 text-lg">
-            <li>Timeslot: 10:00 AM - 12:00 PM</li>
-            <li>Degree: Computer Science</li>
-            <li>Representative: John Doe</li>
-          </ul>
+          <p className="text-gray-600 text-lg">
+            Time slots start at 9am and end at 6pm, 45 mins each.
+          </p>
+          <p className="text-gray-600 text-lg">
+            Focus more on 19th.
+          </p>
+          <p className="text-gray-600 text-lg">
+            Currently recording and will be available to watch and listen soon.
+          </p>
         </div>
       </div>
     </div>
