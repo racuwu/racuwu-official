@@ -19,7 +19,7 @@ import {
 const products = [
   {
     name: "About Us",
-    description: "Rotrac club of uwu",
+    description: "Rotaract club of uwu",
     href: "about",
     icon: ChartPieIcon,
   },
@@ -154,7 +154,7 @@ export default function Navbar() {
           </Popover.Group>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end ">
             <a
-              href="blog"
+              href="/blog"
               className="text-sm font-semibold border rounded-full bg-pink-700 text-white shadow-lg hover:border-pink-700 hover:bg-white hover:text-pink-700 hover:shadow-sm px-8 py-2"
             >
               Blog
@@ -305,7 +305,7 @@ export default function Navbar() {
                     Join US
                   </a>
                   <a
-                    href="https://blog.racuwu.com/blog"  target="_blank" rel="noopener noreferrer"
+                    href="https://racuwu.lk/blog"  target="_blank" rel="noopener noreferrer"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-[#D51067] hover:bg-gray-50"
                   >
                     Visit Blog
