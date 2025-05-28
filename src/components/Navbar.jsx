@@ -154,7 +154,7 @@ export default function Navbar() {
           </Popover.Group>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end ">
             <a
-              href="https://blog.racuwu.com/blog" target="_blank" rel="noopener noreferrer"
+              href="blog"
               className="text-sm font-semibold border rounded-full bg-pink-700 text-white shadow-lg hover:border-pink-700 hover:bg-white hover:text-pink-700 hover:shadow-sm px-8 py-2"
             >
               Blog
