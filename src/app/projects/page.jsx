@@ -108,39 +108,95 @@ const Projects = () => {
       link: "/projects/lush"
     },
   ];
-  return <>
-        <PageHeader title="Projects" />
+    return (
+    <>
+      <PageHeader title="Projects" />
 
-  <div className="flex flex-col items-center pt-[80px]">
-    <TwoLineTitle main="Ongoing Projects" sub="Our Projects" />
-  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-[1140px] py-8 mx-4">
-  {ongoingproject.map((data, index) => (
-            <FeaturesCard
-              key={index}
-              imageUrl={data.imageUrl}
-              title={data.title}
-              subtitle={data.subtitle}
-              content={data.content}
-            />
-          ))}
-    
-  </div>
-  <TwoLineTitle main="Featured Projects" sub="Our Projects" />
-  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-[1140px] py-8 mx-4">
-  {project.map((data, index) => (
-            <FeaturesCard
-              key={index}
-              imageUrl={data.imageUrl}
-              title={data.title}
-              subtitle={data.subtitle}
-              content={data.content}
-              link={data.link}
-            />
-          ))}
-    
-  </div>
-  </div>
-  </>;
+      <div className="flex flex-col items-center pt-[80px] bg-gradient-to-b from-gray-50 to-white pb-20">
+        <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16 animate__animated animate__fadeIn">
+            <h1 className="text-5xl font-bold text-gray-900 mb-6">Our Impact Initiatives</h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Discover the projects through which we create positive change and build a better future for our communities.
+            </p>
+            <div className="w-32 h-1.5 bg-gradient-to-r from-pink-600 to-purple-600 mx-auto mt-8"></div>
+          </div>
+
+          <div className="mb-20">
+            <div className="relative overflow-hidden pb-8">
+              <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-pink-50 to-transparent opacity-70 rounded-3xl"></div>
+              <TwoLineTitle main="Ongoing Projects" sub="Making an impact today" />
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto py-8">
+                {ongoingproject.map((data, index) => (
+                  <div 
+                    key={index} 
+                    className="animate__animated animate__fadeInUp"
+                    style={{animationDelay: `${index * 0.1}s`}}
+                  >
+                    <FeaturesCard
+                      imageUrl={data.imageUrl}
+                      title={data.title}
+                      subtitle={data.subtitle}
+                      content={data.content}
+                      link={data.link}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>          <div>
+            <div className="relative overflow-hidden pb-8">
+              <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-purple-50 to-transparent opacity-70 rounded-3xl"></div>
+              <TwoLineTitle main="Featured Projects" sub="Our proud achievements" />
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto py-8">
+                {project.map((data, index) => (
+                  <div 
+                    key={index} 
+                    className="animate__animated animate__fadeInUp"
+                    style={{animationDelay: `${index * 0.1}s`}}
+                  >
+                    <FeaturesCard
+                      imageUrl={data.imageUrl}
+                      title={data.title}
+                      subtitle={data.subtitle}
+                      content={data.content}
+                      link={data.link}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          
+          <div className="mt-24 text-center animate__animated animate__fadeInUp">
+            <div className="bg-gradient-to-r from-pink-50 to-purple-50 rounded-3xl p-12 shadow-inner">
+              <h3 className="text-3xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600">
+                Have a Project Idea?
+              </h3>
+              <p className="text-gray-700 text-lg max-w-3xl mx-auto mb-8">
+                We're always looking for new ideas and partnerships to create more impact. 
+                If you have a project idea or want to collaborate with us, we'd love to hear from you!
+              </p>
+              <a 
+                href="/contact" 
+                className="inline-flex items-center px-8 py-4 rounded-full bg-gradient-to-r from-pink-600 to-purple-600 text-white font-semibold hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300"
+              >
+                Get in Touch
+                <svg 
+                  className="ml-2 w-5 h-5" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default Projects;
