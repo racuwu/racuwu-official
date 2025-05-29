@@ -39,7 +39,7 @@ function parseArticle(raw) {
 
 async function fetchArticles() {
     try {
-        const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || process.env.VERCEL_URL || 'http://localhost:3000';
+        const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || process.env.VERCEL_URL || 'https://racuwu.lk';
         const res = await fetch(`${baseUrl}/api/blogger`, { 
             cache: 'no-store',
             headers: {
