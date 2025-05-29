@@ -51,8 +51,8 @@ export default async function ArticlePage({ params }) {
         <div className="min-h-screen bg-gradient-to-r from-gray-50 to-white py-20">
           <div className="max-w-4xl mx-auto px-6 sm:px-12 lg:px-16 text-center">
             <div className="bg-white rounded-3xl shadow-xl p-12">
-              <h2 className="text-3xl font-bold text-gray-800 mb-4">Sorry, we couldn't find that article.</h2>
-              <p className="text-gray-600 mb-8">The article you're looking for may have been moved or deleted.</p>
+              <h2 className="text-3xl font-bold text-gray-800 mb-4">Sorry, we couldn&apos;t find that article.</h2>
+              <p className="text-gray-600 mb-8">The article you&apos;re looking for may have been moved or deleted.</p>
               <Link 
                 href="/blog"
                 className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-pink-600 to-purple-600 text-white font-semibold rounded-full hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
