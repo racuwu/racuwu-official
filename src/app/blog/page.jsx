@@ -3,14 +3,21 @@ import Link from 'next/link';
 // Helper to extract meta info and content from article body
 function parseArticle(raw) {
     // Extract meta info at the end of the article
-    const metaRegex = /TP\[(.*?)\][\s\S]*?TG\[(.*?)\][\s\S]*?WT\[(.*?)\][\s\S]*?PD\[(.*?)\]/;
+    const metaRegex = /TP\[ARTICLE\][\s\S]*?TG\[(.*?)\][\s\S]*?WT\[(.*?)\][\s\S]*?PD\[(.*?)\]/;
     const metaMatch = raw.match(metaRegex);
-    const articleContent = raw.replace(metaRegex, '').trim();
-    const tag = metaMatch ? metaMatch[2] : '';
-    const published = metaMatch ? metaMatch[4] : '';
+    let articleContent = raw.replace(metaRegex, '').trim();
+    const tag = metaMatch ? metaMatch[1] : '';
+    const published = metaMatch ? metaMatch[3] : '';
+    const writer = metaMatch ? metaMatch[2] : '';
     // Find first image
-    const imgMatch = raw.match(/<img[^>]+src=["']([^"']+)["']/i);
-    const cover = imgMatch ? imgMatch[1] : '';
+    const imgMatch = articleContent.match(/<img[^>]+src=["']([^"']+)["'][^>]*>/i);
+    const cover = imgMatch ? imgMatch[1] : null;
+
+    if (imgMatch) {
+        articleContent = articleContent.replace(imgMatch[0], '').trim();
+        articleContent = articleContent.replace(/^(<br\s*\/?>\s*)+/, '').trim();
+    }
+
     // Extract first meaningful paragraph with text
     const paragraphRegex = /<p[^>]*>(.*?)<\/p>/gi;
     let paragraphMatch;
@@ -27,20 +34,23 @@ function parseArticle(raw) {
         }
     }
     excerpt += '...';
-    return { content: articleContent, tag, published, cover, excerpt };
+    return { content: articleContent, tag, published, writer, cover, excerpt };
 }
 
 async function fetchArticles() {
     try {
-        const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000';
+        const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || process.env.VERCEL_URL || 'http://localhost:3000';
         const res = await fetch(`${baseUrl}/api/blogger`, { 
             cache: 'no-store',
             headers: {
                 'Content-Type': 'application/json',
+                'Accept': 'application/json',
             }
         });
         
         if (!res.ok) {
+            const errorData = await res.json().catch(() => ({}));
+            console.error('Error fetching articles:', errorData);
             throw new Error('Failed to fetch articles');
         }
         
@@ -54,6 +64,7 @@ async function fetchArticles() {
         return processedArticles;
     } catch (error) {
         console.error('Failed to fetch articles:', error);
+        // Return empty array instead of throwing
         return [];
     }
 }

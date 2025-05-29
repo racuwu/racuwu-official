@@ -7,11 +7,32 @@ export async function GET(req) {
   const url = `https://www.googleapis.com/blogger/v3/blogs/${BLOG_ID}/posts?key=${API_KEY}&fetchBodies=true&maxResults=50`;
 
   try {
-    const res = await fetch(url);
-    if (!res.ok) throw new Error('Failed to fetch from Blogger');
+    const res = await fetch(url, {
+      headers: {
+        'Accept': 'application/json'
+      },
+      cache: 'no-store' // Disable caching to ensure fresh data
+    });
+    
+    if (!res.ok) {
+      const errorData = await res.json().catch(() => ({}));
+      console.error('Blogger API error:', errorData);
+      throw new Error(`Failed to fetch from Blogger: ${res.status}`);
+    }
+    
     const data = await res.json();
-    return NextResponse.json({ posts: data.items || [] });
+    
+    if (!data || !Array.isArray(data.items)) {
+      console.error('Invalid data structure from Blogger API:', data);
+      throw new Error('Invalid response from Blogger API');
+    }
+    
+    return NextResponse.json({ posts: data.items });
   } catch (e) {
-    return NextResponse.json({ error: e.message }, { status: 500 });
+    console.error('Error in blogger API route:', e);
+    return NextResponse.json(
+      { error: 'Failed to fetch blog posts', details: e.message }, 
+      { status: 500 }
+    );
   }
 }

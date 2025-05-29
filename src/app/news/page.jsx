@@ -48,14 +48,15 @@ const fetchPosts = async () => {
         throw new Error('Failed to fetch news');
     }
 
-    const data = await response.json();
-    const processedArticles = (data.posts || [])
+    const data = await response.json();    const processedArticles = (data.posts || [])
         .filter(post => /TP\[NEWS\]/.test(post.content))
         .map(post => {
             const meta = parseArticle(post.content);
             return { id: post.id, title: post.title, ...meta };
         })
         .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
+    
+    return processedArticles;
 };
 
 const NewsHero = ({article}) => {
