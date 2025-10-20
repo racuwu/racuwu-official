@@ -10,7 +10,7 @@ export async function GET(req) {
   }
 
   const BLOG_ID = "2635223598249333700";
-  const API_KEY = "AIzaSyDz2_M1AVfldpnsY78nE3WiKSY4szBGsYc";
+  const API_KEY = "AIzaSyCyf8uuMnRWBsx_wAdMhOfu_BIXrO0QZgg";
   const url = `https://www.googleapis.com/blogger/v3/blogs/${BLOG_ID}/posts/${postId}?key=${API_KEY}`;
 
   try {
