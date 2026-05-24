@@ -1,5 +1,9 @@
 [
- 
+  {
+    "name": "Naveen Sandeepe",
+    "image": "/assets/images/bod/2025/boys/naween.jpg",
+    "postition": "Immediate Past President"
+  },
   {
     "name": "Danidu Thidas",
     "image": "/assets/images/bod/2025/boys/danidu.jpeg",
