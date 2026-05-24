@@ -1,152 +1,157 @@
 [
   {
     "name": "Naveen Sandeepe",
-    "image": "/assets/images/bod/2023/boys/naween.jpg",
+    "image": "/assets/images/bod/2025/boys/naween.jpg",
     "postition": "Immediate Past President"
   },
   {
-    "name": "Thisal Walgampaya",
-    "image": "/assets/images/bod/2023/boys/thisal.jpg",
+    "name": "Danidu Thidas",
+    "image": "/assets/images/bod/2025/boys/danidu.jpeg",
     "postition": "President"
   },
   {
-    "name": "Kaanchana Lakmal",
-    "image": "/assets/images/bod/2023/boys/kaanchana.jpg",
+    "name": "Senumi Hiranya",
+    "image": "/assets/images/bod/2025/girls/senumi.jpeg",
     "postition": "Vice President"
   },
   {
-    "name": "Madara Bandara",
-    "image": "/assets/images/bod/2023/girls/madara.jpg",
+    "name": "Lakindu Umagiliya",
+    "image": "/assets/images/bod/2025/boys/lakindu.jpeg",
     "postition": "Vice President"
   },
   {
-    "name": "Nipuni Lakshani",
-    "image": "/assets/images/bod/2023/girls/nipuni.jpg",
+    "name": "Dhananjith Swarnahansa",
+    "image": "/assets/images/bod/2025/boys/swarna.jpeg",
     "postition": "Vice President"
   },
   {
-    "name": "Thimira Kalansooriya",
-    "image": "/assets/images/bod/2023/boys/thimira.jpg",
+    "name": "Prabath Wijepala ",
+    "image": "/assets/images/bod/2025/boys/prabath.jpeg",
     "postition": "Vice President"
   },
   {
-    "name": "Gayathma Weerawanni",
-    "image": "/assets/images/bod/2023/girls/gayathma.jpg",
+    "name": "Lowamini Prabhashika",
+    "image": "/assets/images/bod/2025/girls/lowa.jpeg",
+    "postition": "Joint Secretary"
+  },
+  {
+    "name": "Sujayee Ranasinghe",
+    "image": "/assets/images/bod/2025/girls/suja.jpeg",
     "postition": "Secretary"
   },
   {
-    "name": "Sachini Madushka",
-    "image": "/assets/images/bod/2023/girls/sachini.jpg",
-    "postition": "Secretary"
-  },
-  {
-    "name": "Sathsara Senarathna ",
-    "image": "/assets/images/bod/2023/boys/sathsara.jpg",
+    "name": "Lakshan Bulathsinghala ",
+    "image": "/assets/images/bod/2025/boys/lakshan.jpeg",
     "postition": "Sergeant At Arms"
   },
   {
-    "name": "Dehemi Samarasinghe ",
-    "image": "/assets/images/bod/2023/girls/dehemi.jpg",
+    "name": "Ravindu Wijesingha ",
+    "image": "/assets/images/bod/2025/boys/ravindu.jpeg",
     "postition": "Treasurer"
   },
   {
-    "name": "Adithya Ambegoda",
-    "image": "/assets/images/bod/2023/girls/adithya.jpg",
+    "name": "Kavidya Thalakotuwa ",
+    "image": "/assets/images/bod/2025/girls/kavindya.jpeg",
+    "postition": "Assistant Treasurer"
+  },
+  {
+    "name": "Mayuri Weerakoon",
+    "image": "/assets/images/bod/2025/girls/mayuri.jpeg",
     "postition": "Assistant Secretary"
   },
   {
-    "name": "Sayuri Wijesekara",
-    "image": "/assets/images/bod/2023/girls/sayuri.jpg",
+    "name": "Chathuri Pramoda",
+    "image": "/assets/images/bod/2025/girls/chathuri.jpeg",
+    "postition": "Assistant Secretary"
+  },
+  {
+    "name": "Thevini Ayathma",
+    "image": "/assets/images/bod/2025/girls/thevini.jpeg",
     "postition": "Assistant Secretary"
   },
   {
     "name": "Nimesha Bandara",
-    "image": "/assets/images/bod/2023/girls/nimesha.jpg",
+    "image": "/assets/images/bod/2025/girls/nimesha.jpg",
     "postition": "Co-Director of Professional Development"
   },
   {
     "name": "Pasindu Sirimanna",
-    "image": "/assets/images/bod/2023/boys/pasindu.jpg",
+    "image": "/assets/images/bod/2025/boys/pasindu.jpg",
     "postition": "Co-Director of Professional Development"
   },
   {
-    "name": "Salani Dharmasena",
-    "image": "/assets/images/bod/2023/girls/salani.jpg",
+    "name": "Ruu Wishmika",
+    "image": "/assets/images/bod/2025/girls/ruu.jpeg",
     "postition": "Director of Club Service"
   },
   {
-    "name": "Sasrika Jayasinghe",
-    "image": "/assets/images/bod/2023/girls/sasrika.jpg",
+    "name": "Pramodya Sandeepani",
+    "image": "/assets/images/bod/2025/girls/pramodya.jpeg",
     "postition": "Director of International Service"
   },
   {
     "name": "Yasith Eranda Yapa Amarasekara",
-    "image": "/assets/images/bod/2023/boys/yasith.jpg",
+    "image": "/assets/images/bod/2025/boys/yasith.jpg",
     "postition": "Co-Director of Public Relation and Digital Services"
   },
   {
     "name": "Mihisara Bandara",
-    "image": "/assets/images/bod/2023/boys/mihisara.jpg",
+    "image": "/assets/images/bod/2025/boys/mihisara.jpg",
     "postition": "Co-Director of Public Relation and Digital Services"
   },
   {
-    "name": "Harsha T Bandara",
-    "image": "/assets/images/bod/2023/boys/harsha.jpg",
+    "name": "Sasindu Banuka ",
+    "image": "/assets/images/bod/2025/boys/sasindu.jpeg",
     "postition": "Co-Director of Community Service"
   },
   {
-    "name": "Jayodya Abeykoon",
-    "image": "/assets/images/bod/2023/girls/jayodya.jpg",
+    "name": "Bhagya Lakmini",
+    "image": "/assets/images/bod/2025/girls/bhagya.jpeg",
     "postition": "Co-Director of Community Service"
   },
   {
     "name": "Vindya Bambaradeniya",
-    "image": "/assets/images/bod/2023/girls/vindya.jpg",
+    "image": "/assets/images/bod/2025/girls/vindya.jpg",
     "postition": "Director of Environmental Service"
   },
   {
     "name": "Kawmadi Rajakaruna",
-    "image": "/assets/images/bod/2023/girls/kawmadi.jpg",
+    "image": "/assets/images/bod/2025/girls/kawmadi.jpg",
     "postition": "Director of Regional Engagement"
   },
   {
     "name": "Sachintha Rupasinghe",
-    "image": "/assets/images/bod/2023/boys/sachintha.jpg",
+    "image": "/assets/images/bod/2025/boys/sachintha.jpg",
     "postition": "Director of Sports and Recreational Activities"
   },
   {
     "name": "Nipuna Kavinda",
-    "image": "/assets/images/bod/2023/boys/nipuna.jpg",
+    "image": "/assets/images/bod/2025/boys/nipuna.jpg",
     "postition": "Director of Strategic Planning and Finance"
   },
   {
-    "name": "Asitha Samaradiwakara",
-    "image": "/assets/images/bod/2023/boys/asitha.jpg",
-    "postition": "Co-Editor"
+    "name": "Naveen Samarakoon",
+    "image": "/assets/images/bod/2025/boys/naveen.jpeg",
+    "postition": "Editor"
   },
   {
-    "name": "Pavithre wickramarathna",
-    "image": "/assets/images/bod/2023/boys/pavithre.jpg",
-    "postition": "Co-Editor"
+    "name": "Neshan Hansaka",
+    "image": "/assets/images/bod/2025/boys/neshan.jpeg",
+    "postition": "Editor"
   },
   {
-    "name": "Chandima Jayawardana",
-    "image": "/assets/images/bod/2023/boys/chandima.jpg",
-    "postition": "Assistant Secretary"
+    "name": "Panchalika Hiruni",
+    "image": "/assets/images/bod/2025/girls/panchalika.jpeg",
+    "postition": "Editor"
   },
   {
-    "name": "Rushmi Rosairo",
-    "image": "/assets/images/bod/2023/girls/rushmi.jpg",
-    "postition": "Assistant Secretary"
-  },
-  {
-    "name": "Sathsara Senanayake",
-    "image": "/assets/images/bod/2023/boys/sathsara-small.jpg",
+    "name": "Hansika Nirmani",
+    "image": "/assets/images/bod/2025/girls/hansika.jpeg",
     "postition": "Assistant Director of Club Service"
   },
   {
     "name": "Maleeshan Adathsooriya",
-    "image": "/assets/images/bod/2023/boys/maleeshan.jpg",
+    "image": "/assets/images/bod/2025/boys/maleeshan.jpg",
     "postition": "Assistant Director of International Service"
   }
 ]
