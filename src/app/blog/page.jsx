@@ -36,8 +36,45 @@ function parseArticle(raw) {
     excerpt += '...';
     return { content: articleContent, tag, published, writer, cover, excerpt };
 }
-
 async function fetchArticles() {
+    try {
+        const BLOG_ID = "2635223598249333700";
+        // Make sure you put your API key in your .env.local file!
+        const API_KEY = process.env.GOOGLE_BLOGGER_API_KEY || "AIzaSyAaVMXrEeZGgkH8g5Ix4TV7EZKw_SMe5Aw"; 
+        const url = `https://www.googleapis.com/blogger/v3/blogs/${BLOG_ID}/posts?key=${API_KEY}&fetchBodies=true&maxResults=50`;
+
+        // Fetch directly from Google instead of your local API route
+        const res = await fetch(url, { 
+            // Using ISR (revalidate every hour) is much faster for blogs than 'no-store'
+            next: { revalidate: 3600 },
+            headers: {
+                'Accept': 'application/json',
+            }
+        });
+        
+        if (!res.ok) {
+            const errorData = await res.json().catch(() => ({}));
+            console.error('Blogger API error:', errorData);
+            throw new Error('Failed to fetch articles from Blogger');
+        }
+        
+        const data = await res.json();
+        const processedArticles = (data.items || [])
+            .filter(post => /TP\[ARTICLE\]/.test(post.content))
+            .map(post => {
+                const meta = parseArticle(post.content);
+                return { id: post.id, title: post.title, ...meta };
+            });
+            
+        return processedArticles;
+    } catch (error) {
+        console.error('Failed to fetch articles:', error);
+        // Return empty array instead of throwing so the page doesn't crash completely
+        return [];
+    }
+}
+
+async function fetchArticlesold() {
     try {
         const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || process.env.VERCEL_URL || 'https://racuwu.lk';
         const res = await fetch(`${baseUrl}/api/blogger`, { 
