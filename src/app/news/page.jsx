@@ -34,8 +34,46 @@ function parseArticle(raw) {
     excerpt += '...';
     return { content: articleContent, tag, writer, publishedAt, image, excerpt };
 }
-
 const fetchPosts = async () => {
+    try {
+        const BLOG_ID = "2635223598249333700";
+        // Make sure to set GOOGLE_BLOGGER_API_KEY in your Netlify Environment Variables!
+        const API_KEY = process.env.GOOGLE_BLOGGER_API_KEY || "AIzaSyAaVMXrEeZGgkH8g5Ix4TV7EZKw_SMe5Aw"; 
+        const url = `https://www.googleapis.com/blogger/v3/blogs/${BLOG_ID}/posts?key=${API_KEY}&fetchBodies=true&maxResults=50`;
+
+        // Fetch directly from Google instead of your local API route
+        const response = await fetch(url, {
+            // Using ISR (revalidates every hour) prevents build timeouts 
+            // and saves your Google API quota compared to 'no-store'
+            next: { revalidate: 3600 }, 
+            headers: {
+                'Accept': 'application/json',
+            }
+        });
+
+        if (!response.ok) {
+            console.error('Blogger API error during build:', response.status);
+            throw new Error('Failed to fetch news from Google Blogger');
+        }
+
+        const data = await response.json();
+        const processedArticles = (data.items || [])
+            .filter(post => /TP\[NEWS\]/.test(post.content))
+            .map(post => {
+                const meta = parseArticle(post.content);
+                return { id: post.id, title: post.title, ...meta };
+            })
+            .sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
+        
+        return processedArticles;
+    } catch (error) {
+        console.error('Build Error in fetchPosts:', error);
+        // By returning an empty array instead of throwing an error, 
+        // the Netlify build will succeed even if the API happens to be down!
+        return []; 
+    }
+};
+const fetchPostsold = async () => {
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://racuwu.lk';
     const response = await fetch(`${baseUrl}/api/blogger`, {
         cache: 'no-store',
