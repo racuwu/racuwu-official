@@ -15,11 +15,9 @@ export async function GET(req) {
 
   try {
     const res = await fetch(url);
-
     if (!res.ok) throw new Error('Failed to fetch the article from Blogger');
     const data = await res.json();
     return NextResponse.json({ post: data });
-    
   } catch (e) {
     return NextResponse.json({ error: e.message }, { status: 500 });
   }
